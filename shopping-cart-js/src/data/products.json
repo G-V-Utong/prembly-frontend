@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Anker Soundcore Space One Active Noise Cancelling Wireless Headphones",
+    "price": 100000,
+    "image": "/product-images/anker-spaceone.jpg",
+    "description": "Premium noise-canceling headphones"
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy Watch 7 40mm Bluetooth AI Smart Watch",
+    "price": 1198000,
+    "image": "/product-images/galaxy-watch.jpg",
+    "description": "Fitness tracker with heart rate monitor"
+  },
+  {
+    "id": 3,
+    "name": "Nillkin Prodesk Adjustable Laptop Stand",
+    "price": 55000,
+    "image": "/product-images/laptop-stand.jpg",
+    "description": "Ergonomic aluminum laptop stand"
+  },
+  {
+    "id": 4,
+    "name": "Baseus Hub USB-C 8-in-1 Multiport Adapter",
+    "price": 89000,
+    "image": "/product-images/usb-c-hub.jpg",
+    "description": "7-in-1 USB-C multiport adapter"
+  }
+]
