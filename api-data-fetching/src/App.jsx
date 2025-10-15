@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import Quotes from './pages/Quotes.jsx';
+import Covid from './pages/Covid.jsx';
 
 export default function App() {
   return (
@@ -14,10 +16,10 @@ export default function App() {
       </nav>
       <main className="container">
         <Routes>
-          {/* <Route path="/" element={<Quotes />} />
+          <Route path="/" element={<Quotes />} />
           <Route path="/quotes" element={<Quotes />} />
           <Route path="/covid" element={<Covid />} />
-          <Route path="/users" element={<RandomUsers />} /> */}
+          {/* <Route path="/users" element={<RandomUsers />} /> */}
         </Routes>
       </main>
       <footer className="footer">© {new Date().getFullYear()} API Data Fetching</footer>
