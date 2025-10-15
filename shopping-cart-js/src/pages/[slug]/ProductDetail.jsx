@@ -18,7 +18,7 @@ export default function ProductDetail() {
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-8">
       <button
         onClick={() => navigate(-1)}
-        className="mb-6 flex items-center text-indigo-600 hover:text-indigo-800 font-medium"
+        className="mb-6 flex items-center text-blue-600 hover:text-indigo-800 font-medium"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 mr-2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -35,7 +35,7 @@ export default function ProductDetail() {
         </div>
         <div className="w-full md:w-1/2">
           <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
-          <p className="text-xl text-indigo-600 font-semibold mb-2">₦{product.price.toLocaleString()}</p>
+          <p className="text-xl text-blue-600 font-semibold mb-2">₦{product.price.toLocaleString()}</p>
           <p className="mb-4 text-gray-700">{product.description}</p>
       <div className="mb-4">
         <span className="font-semibold text-gray-600">Brand:</span> {product.brand} <br />
