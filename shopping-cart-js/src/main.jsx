@@ -5,11 +5,13 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import store from './redux/store.js'
 import './style.css'
+import Navbar from './components/navbar.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+      <Navbar />
         <App />
       </BrowserRouter>
     </Provider>

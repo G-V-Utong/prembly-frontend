@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createSelector } from '@reduxjs/toolkit'
 
 const initialState = {
   items: {} // { [productId]: { id, name, price, image, quantity } }
@@ -39,8 +39,12 @@ const cartSlice = createSlice({
 
 export const { addToCart, increment, decrement, removeItem, clearCart } = cartSlice.actions
 
-export const selectCartArray = (state) => Object.values(state.cart.items)
+export const selectCartArray = createSelector(
+  state => state.cart.items,
+  items => Object.values(items)
+);
 export const selectCartCount = (state) => Object.values(state.cart.items).reduce((acc, it) => acc + it.quantity, 0)
 export const selectCartTotal = (state) => Object.values(state.cart.items).reduce((acc, it) => acc + it.price * it.quantity, 0)
+
 
 export default cartSlice.reducer

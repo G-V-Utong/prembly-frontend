@@ -9,13 +9,6 @@ export default function App() {
   const count = useSelector(selectCartCount)
   return (
     <div>
-      <nav className="navbar">
-        <Link to="/products" className="brand">Shop</Link>
-        <div className="nav-links">
-          <Link to="/products">Products</Link>
-          <Link to="/cart">Cart ({count})</Link>
-        </div>
-      </nav>
       <main>
         <Routes>
           <Route path="/" element={<Products />} />

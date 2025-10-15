@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectCartArray, selectCartTotal, increment, decrement, removeItem, clearCart } from '../redux/cartSlice.js'
+import { ShoppingCart } from 'lucide-react';
 
 export default function Cart() {
   const dispatch = useDispatch()
@@ -9,9 +10,12 @@ export default function Cart() {
 
   return (
     <div className="container">
-      <h2>Your Cart</h2>
       {items.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <div className="text-center py-16">
+        <ShoppingCart className="w-24 h-24 mx-auto text-gray-400 mb-4" />
+        <h2 className="text-3xl font-bold text-gray-700 mb-2">Your cart is empty</h2>
+        <p className="text-gray-500">Add some products to get started!</p>
+      </div>
       ) : (
         <div className="cart-list">
           {items.map((it) => (
