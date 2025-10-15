@@ -10,38 +10,61 @@ export default function Cart() {
   const [footerOffset, setFooterOffset] = useState(0)
 
   useEffect(() => {
-    const footer = document.querySelector('footer')
-    if (!footer) return
+      const footer = document.querySelector('footer')
+      if (!footer) return
 
-    // Update function to set footer height when it's visible
-    const onIntersect = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // When footer enters viewport, set offset to its height
-          setFooterOffset(entry.boundingClientRect.height || footer.getBoundingClientRect().height)
-        } else {
-          setFooterOffset(0)
-        }
-      })
-    }
+      const mobileQuery = window.matchMedia('(max-width: 767px)')
+      let observer = null
 
-    const observer = new IntersectionObserver(onIntersect, { root: null, threshold: 0 })
-    observer.observe(footer)
+      const onIntersect = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setFooterOffset(entry.boundingClientRect.height || footer.getBoundingClientRect().height)
+          } else {
+            setFooterOffset(0)
+          }
+        })
+      }
 
-    // Also update on resize in case footer height changes
-    const onResize = () => {
-      if (footer && footer.getBoundingClientRect) {
-        // If footer is currently visible, keep offset updated
+      const observeFooter = () => {
+        if (observer) return
+        observer = new IntersectionObserver(onIntersect, { root: null, threshold: 0 })
+        observer.observe(footer)
         const rect = footer.getBoundingClientRect()
         if (rect.top < window.innerHeight) setFooterOffset(rect.height)
       }
-    }
-    window.addEventListener('resize', onResize)
 
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('resize', onResize)
-    }
+      const unobserveFooter = () => {
+        if (observer) {
+          observer.disconnect()
+          observer = null
+        }
+        setFooterOffset(0)
+      }
+
+      const onMediaChange = (e) => {
+        if (e.matches) observeFooter()
+        else unobserveFooter()
+      }
+
+      if (mobileQuery.matches) observeFooter()
+      if (mobileQuery.addEventListener) mobileQuery.addEventListener('change', onMediaChange)
+      else mobileQuery.addListener(onMediaChange)
+
+      const onResize = () => {
+        if (!mobileQuery.matches) return
+        const rect = footer.getBoundingClientRect()
+        if (rect.top < window.innerHeight) setFooterOffset(rect.height)
+        else setFooterOffset(0)
+      }
+      window.addEventListener('resize', onResize)
+
+      return () => {
+        unobserveFooter()
+        window.removeEventListener('resize', onResize)
+        if (mobileQuery.removeEventListener) mobileQuery.removeEventListener('change', onMediaChange)
+        else mobileQuery.removeListener(onMediaChange)
+      }
   }, [])
 
   return (
