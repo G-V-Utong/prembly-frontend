@@ -82,7 +82,7 @@ export default function Cart() {
               <img src={it.image} alt={it.name} className="w-full max-w-[140px] h-36 object-cover rounded-lg border md:w-24 md:h-24" />
               <div className="flex-1 w-full">
                 <h4 className="text-lg font-semibold text-gray-800 mb-1">{it.name}</h4>
-                <p className="text-indigo-600 font-bold mb-2">₦{it.price.toLocaleString()}</p>
+                <p className="text-blue-600 font-bold mb-2">₦{it.price.toLocaleString()}</p>
                 <div className="flex items-center gap-2 mb-2">
                   <button
                     onClick={() => dispatch(decrement(it.id))}
@@ -112,7 +112,7 @@ export default function Cart() {
             style={footerOffset ? { bottom: `${footerOffset}px` } : undefined}
           >
             <div className="max-w-4xl mx-auto w-full flex flex-col md:flex-row md:items-center md:justify-between">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0 text-center md:text-left">Total: <span className="text-indigo-600">₦{total.toLocaleString()}</span></h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0 text-center md:text-left">Total: <span className="text-blue-600">₦{total.toLocaleString()}</span></h3>
               <div>
                 <button
                   className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition-colors w-full md:w-auto"

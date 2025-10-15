@@ -17,7 +17,7 @@ export default function ProductCard({ product, onAdd }) {
           <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
             {product.name}
           </h3>
-          <p className="text-indigo-600 text-xl font-bold mb-4">
+          <p className="text-blue-600 text-xl font-bold mb-4">
             ₦{product.price.toLocaleString()}
           </p>
         </div>
