@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import LoadingSpinner from '../components/LoadingSpinner.jsx';
 
 export default function RandomUsers() {
   const [users, setUsers] = useState([])
@@ -35,13 +36,7 @@ export default function RandomUsers() {
           </div>
         </header>
 
-        {loading && (
-          <div className="rounded-lg p-6 bg-white shadow-sm animate-pulse flex flex-col items-center">
-            <div className="h-6 bg-gray-200 rounded w-1/3 mb-4" />
-            <div className="h-40 bg-gray-200 rounded w-full" />
-            <span className="mt-4 text-gray-400">Loading…</span>
-          </div>
-        )}
+        {loading && <LoadingSpinner label="Fetching user data…" />}
 
         {error && (
           <div className="rounded-lg p-4 bg-red-50 text-red-700 border border-red-100">Error: {String(error)}</div>

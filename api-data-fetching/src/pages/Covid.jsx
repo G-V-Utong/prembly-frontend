@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import LoadingSpinner from '../components/LoadingSpinner.jsx';
 import { Line } from 'react-chartjs-2'
 import {
   Chart as ChartJS,
@@ -114,12 +115,7 @@ export default function Covid() {
           </div>
         </header>
 
-        {loading && (
-          <div className="rounded-lg p-6 bg-white shadow-sm animate-pulse">
-            <div className="h-6 bg-gray-200 rounded w-1/3 mb-4" />
-            <div className="h-40 bg-gray-200 rounded" />
-          </div>
-        )}
+        {loading && <LoadingSpinner label="Fetching COVID-19 data…" />}
 
         {error && (
           <div className="rounded-lg p-4 bg-red-50 text-red-700 border border-red-100">Error: {String(error)}</div>
