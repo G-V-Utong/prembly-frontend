@@ -9,7 +9,7 @@ export default function Cart() {
   const total = useSelector(selectCartTotal)
 
   return (
-    <div className="container">
+    <div className="container m-auto py-8">
       {items.length === 0 ? (
         <div className="text-center py-16">
         <ShoppingCart className="w-24 h-24 mx-auto text-gray-400 mb-4" />

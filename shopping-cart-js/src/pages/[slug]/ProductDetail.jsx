@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../../data/products.json';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -46,7 +47,10 @@ export default function ProductDetail() {
           </ul>
         </div>
       )}
-      <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg shadow">
+      <button
+        onClick={() => { try { toast.success(`${product.name} added to cart`); } catch (e) {} }}
+        className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg shadow"
+      >
         Add to Cart
       </button>
     </div>

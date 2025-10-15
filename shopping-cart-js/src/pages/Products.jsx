@@ -13,9 +13,7 @@ export default function Products() {
       <h2 className="text-3xl font-bold mb-8 text-center">Products</h2>
       <div className="flex gap-6 flex-wrap justify-center">
         {data.map((p) => (
-          <Link key={p.id} to={`/products/${p.slug}`} className="hover:no-underline">
-            <ProductCard product={p} onAdd={(prod) => dispatch(addToCart(prod))} />
-          </Link>
+          <ProductCard key={p.id} product={p} onAdd={(prod) => dispatch(addToCart(prod))} />
         ))}
       </div>
     </div>
