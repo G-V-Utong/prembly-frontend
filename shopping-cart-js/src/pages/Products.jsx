@@ -1,6 +1,6 @@
 import React from 'react'
 import data from '../data/products.json'
-// import ProductCard from '../components/ProductCard.jsx'
+import ProductCard from '../components/productCard.jsx'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/cartSlice.js'
 
