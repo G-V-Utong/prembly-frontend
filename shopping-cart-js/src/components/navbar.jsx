@@ -30,7 +30,6 @@ const Navbar = () => {
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             onClick={closeMobileMenu}
           >
-            <Package className="w-8 h-8 text-indigo-600" />
             <span className="text-2xl font-bold text-gray-800">
               Prembly Gadgets
             </span>

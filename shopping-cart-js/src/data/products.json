@@ -1,30 +1,66 @@
 [
   {
     "id": 1,
+    "slug": "anker-soundcore-space-one",
     "name": "Anker Soundcore Space One Active Noise Cancelling Wireless Headphones",
     "price": 100000,
     "image": "/product-images/anker-spaceone.jpg",
-    "description": "Premium noise-canceling headphones"
+    "description": "Premium noise-canceling headphones with 40mm drivers, 40-hour battery life, and comfortable fit.",
+    "features": [
+      "Hybrid Active Noise Cancellation",
+      "40mm custom drivers",
+      "Up to 40 hours playtime",
+      "Bluetooth 5.0"
+    ],
+    "brand": "Anker",
+    "category": "Headphones"
   },
   {
     "id": 2,
+    "slug": "samsung-galaxy-watch-7",
     "name": "Samsung Galaxy Watch 7 40mm Bluetooth AI Smart Watch",
     "price": 1198000,
     "image": "/product-images/galaxy-watch.jpg",
-    "description": "Fitness tracker with heart rate monitor"
+    "description": "Fitness tracker with heart rate monitor, sleep tracking, and AI-powered health insights.",
+    "features": [
+      "Heart Rate Monitor",
+      "Sleep Tracking",
+      "AI Health Insights",
+      "Bluetooth Connectivity"
+    ],
+    "brand": "Samsung",
+    "category": "Smart Watch"
   },
   {
     "id": 3,
+    "slug": "nillkin-prodesk-laptop-stand",
     "name": "Nillkin Prodesk Adjustable Laptop Stand",
     "price": 55000,
     "image": "/product-images/laptop-stand.jpg",
-    "description": "Ergonomic aluminum laptop stand"
+    "description": "Ergonomic aluminum laptop stand with adjustable height and angle for better posture.",
+    "features": [
+      "Aluminum Alloy",
+      "Adjustable Height & Angle",
+      "Anti-slip Pads",
+      "Supports up to 17-inch laptops"
+    ],
+    "brand": "Nillkin",
+    "category": "Laptop Accessories"
   },
   {
     "id": 4,
+    "slug": "baseus-hub-usb-c-8-in-1",
     "name": "Baseus Hub USB-C 8-in-1 Multiport Adapter",
     "price": 89000,
     "image": "/product-images/usb-c-hub.jpg",
-    "description": "7-in-1 USB-C multiport adapter"
+    "description": "7-in-1 USB-C multiport adapter with HDMI, USB 3.0, SD card reader, and more.",
+    "features": [
+      "HDMI Output",
+      "USB 3.0 Ports",
+      "SD/TF Card Reader",
+      "Gigabit Ethernet"
+    ],
+    "brand": "Baseus",
+    "category": "Adapters"
   }
 ]
