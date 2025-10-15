@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 
 export default function App() {
-  const count = useSelector(selectCartCount)
   return (
     <div>
       <nav className="navbar">
