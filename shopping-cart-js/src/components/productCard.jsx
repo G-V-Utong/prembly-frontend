@@ -4,15 +4,17 @@ import { toast } from 'sonner';
 
 export default function ProductCard({ product, onAdd }) {
   return (
-    <div className="w-[300px] p-4 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 flex flex-col group">
+    <div className="w-full max-w-sm p-4 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 flex flex-col group">
       <Link to={`/products/${product.slug}`} className="no-underline text-inherit flex flex-col">
-        <img
-          className="h-48 w-48 object-cover self-center transition-transform duration-300 group-hover:scale-110"
-          src={product.image}
-          alt={product.name}
-        />
+        <div className="w-full overflow-hidden rounded-md">
+          <img
+            className="w-48 h-48 object-cover mx-auto transition-transform duration-300 group-hover:scale-105"
+            src={product.image}
+            alt={product.name}
+          />
+        </div>
         <div className="p-2 flex flex-col flex-1 justify-between">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2 truncate">
+          <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
             {product.name}
           </h3>
           <p className="text-indigo-600 text-xl font-bold mb-4">
@@ -20,14 +22,14 @@ export default function ProductCard({ product, onAdd }) {
           </p>
         </div>
       </Link>
-      <div className="">
+      <div className="mt-2">
         <button
           type="button"
           onClick={() => {
             onAdd(product);
             try { toast.success(`${product.name} added to cart`); } catch (e) {}
           }}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-colors"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-colors w-full sm:w-auto"
         >
           Add to Cart
         </button>

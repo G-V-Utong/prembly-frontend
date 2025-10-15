@@ -24,19 +24,18 @@ const Navbar = () => {
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo Section */}
+          
           <Link
             to="/products"
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             onClick={closeMobileMenu}
           >
-            <span className="text-2xl font-bold text-gray-800">
+            <span className="text-xl sm:text-2xl font-bold text-gray-800 truncate">
               Prembly Gadgets
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-4 items-center">
             <Link
               to="/products"
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
@@ -67,9 +66,25 @@ const Navbar = () => {
             </Link>
           </div>
 
+          <div className="flex items-center gap 2 md:hidden">
+            <Link
+            to="/cart"
+            onClick={closeMobileMenu}
+            className="md:hidden relative p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors mr-2"
+            aria-label="Open cart"
+          >
+            <ShoppingCart className="w-6 h-6" />
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-lg">
+                {totalItems}
+              </span>
+            )}
+          </Link>
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -77,6 +92,7 @@ const Navbar = () => {
               <Menu className="w-6 h-6" />
             )}
           </button>
+          </div>
         </div>
 
         {mobileMenuOpen && (
@@ -92,24 +108,6 @@ const Navbar = () => {
             >
               <Home className="w-5 h-5" />
               <span className="font-medium">Products</span>
-            </Link>
-
-            <Link
-              to="/cart"
-              onClick={closeMobileMenu}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-lg transition-colors relative ${
-                isActive("/cart")
-                  ? "bg-indigo-600 text-white"
-                  : "text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              <ShoppingCart className="w-5 h-5" />
-              <span className="font-medium">Cart</span>
-              {totalItems > 0 && (
-                <span className="ml-2 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
             </Link>
           </div>
         )}

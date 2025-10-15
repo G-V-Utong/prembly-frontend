@@ -14,8 +14,8 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className='p-8 w-screen'>
-        <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 flex flex-col">
+    <div className='py-8 px-4'>
+      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-8">
       <button
         onClick={() => navigate(-1)}
         className="mb-6 flex items-center text-indigo-600 hover:text-indigo-800 font-medium"
@@ -25,14 +25,18 @@ export default function ProductDetail() {
         </svg>
         Back
       </button>
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-64 h-64 object-cover rounded-lg mb-6 self-center"
-      />
-      <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
-      <p className="text-xl text-indigo-600 font-semibold mb-2">₦{product.price.toLocaleString()}</p>
-      <p className="mb-4 text-gray-700">{product.description}</p>
+      <div className="flex flex-col md:flex-row md:items-start md:gap-8">
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full max-w-sm h-auto object-cover rounded-lg mb-6"
+          />
+        </div>
+        <div className="w-full md:w-1/2">
+          <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
+          <p className="text-xl text-indigo-600 font-semibold mb-2">₦{product.price.toLocaleString()}</p>
+          <p className="mb-4 text-gray-700">{product.description}</p>
       <div className="mb-4">
         <span className="font-semibold text-gray-600">Brand:</span> {product.brand} <br />
         <span className="font-semibold text-gray-600">Category:</span> {product.category}
@@ -47,12 +51,16 @@ export default function ProductDetail() {
           </ul>
         </div>
       )}
-      <button
-        onClick={() => { try { toast.success(`${product.name} added to cart`); } catch (e) {} }}
-        className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg shadow"
-      >
-        Add to Cart
-      </button>
+          <div className="mt-4">
+            <button
+              onClick={() => { try { toast.success(`${product.name} added to cart`); } catch (e) {} }}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg shadow w-full md:w-auto"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     </div>
   );
