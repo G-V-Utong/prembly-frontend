@@ -218,25 +218,25 @@ export default function Covid() {
                 <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
                   <div>
                     <dt className="text-gray-500">States reporting</dt>
-                    <dd className="font-medium text-gray-800">
+                    <dd className="font-semibold text-2xl text-sky-600">
                       {fmt(latest.states)}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-gray-500">Pending</dt>
-                    <dd className="font-medium text-gray-800">
+                    <dd className="font-semibold text-2xl text-amber-500">
                       {fmt(latest.pending)}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-gray-500">In ICU</dt>
-                    <dd className="font-medium text-gray-800">
+                    <dd className="font-semibold text-2xl text-rose-500">
                       {fmt(latest.inIcuCurrently)}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-gray-500">On Ventilator</dt>
-                    <dd className="font-medium text-gray-800">
+                    <dd className="font-semibold text-2xl text-emerald-500">
                       {fmt(latest.onVentilatorCurrently)}
                     </dd>
                   </div>
@@ -260,10 +260,10 @@ export default function Covid() {
                   <thead>
                     <tr className="text-xs text-gray-500 uppercase">
                       <th className="py-2 pr-4">Date</th>
-                      <th className="py-2 pr-4">Positive</th>
-                      <th className="py-2 pr-4">Positive ↑</th>
-                      <th className="py-2 pr-4">Deaths</th>
-                      <th className="py-2 pr-4">Deaths ↑</th>
+                      <th className="py-2 pr-4">Total Positive</th>
+                      <th className="py-2 pr-4">Positive Increase</th>
+                      <th className="py-2 pr-4">Total Deaths</th>
+                      <th className="py-2 pr-4">Deaths Increase</th>
                       <th className="py-2 pr-4">Hospitalized</th>
                       <th className="py-2 pr-4">Tests ↑</th>
                     </tr>
