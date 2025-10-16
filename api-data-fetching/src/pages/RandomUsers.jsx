@@ -20,7 +20,7 @@ export default function RandomUsers() {
       } catch (e) {
         if (e.name !== "AbortError") setError(e.message);
       } finally {
-        await new Promise((res) => setTimeout(res, 200)); // artificial delay for spinner test
+        await new Promise((res) => setTimeout(res, 800)); // artificial delay for spinner test
         setLoading(false);
       }
     }
