@@ -2,7 +2,7 @@ import { createSlice, createSelector, type PayloadAction } from "@reduxjs/toolki
 import type { CartItem, CartState, Product } from '../../utils/types'
 
 const initialState: CartState = {
-  items: {}, // { [productId]: { id, name, price, image, quantity } }
+  items: {}, 
 };
 
 const cartSlice = createSlice({
@@ -17,18 +17,18 @@ const cartSlice = createSlice({
         state.items[product.id] = { ...product, quantity: 1 };
       }
     },
-    increment: (state, action: PayloadAction<string>) => {
+    increment: (state, action: PayloadAction<number>) => {
       const id = action.payload;
       if (state.items[id]) state.items[id].quantity += 1;
     },
-    decrement: (state, action: PayloadAction<string>) => {
+    decrement: (state, action: PayloadAction<number>) => {
       const id = action.payload;
       if (state.items[id]) {
         state.items[id].quantity -= 1;
         if (state.items[id].quantity <= 0) delete state.items[id];
       }
     },
-    removeItem: (state, action: PayloadAction<string>) => {
+    removeItem: (state, action: PayloadAction<number>) => {
       const id = action.payload;
       delete state.items[id];
     },
@@ -47,6 +47,7 @@ export const selectCartArray = createSelector(
 );
 export const selectCartCount = (state: { cart: CartState }) =>
   Object.values(state.cart.items).reduce((acc, it) => acc + it.quantity, 0);
+
 export const selectCartTotal = (state: { cart: CartState }) =>
   Object.values(state.cart.items).reduce(
     (acc, it) => acc + it.price * it.quantity,

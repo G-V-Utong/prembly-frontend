@@ -8,7 +8,7 @@ export default function ProductCard({ product, onAdd }) {
       <Link to={`/products/${product.slug}`} className="no-underline text-inherit flex flex-col">
         <div className="w-full overflow-hidden rounded-md">
           <img
-            className="w-48 h-48 object-cover mx-auto transition-transform duration-300 group-hover:scale-105"
+            className="w-48 h-48 object-cover mx-auto transition-transform duration-300 group-hover:scale-110"
             src={product.image}
             alt={product.name}
           />
