@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectCartArray, selectCartTotal, increment, decrement, removeItem, clearCart } from '../redux/cartSlice.js'
-import { ShoppingCart } from 'lucide-react';
+import { Trash2, ShoppingCart } from 'lucide-react';
 
 export default function Cart() {
   const dispatch = useDispatch()
@@ -96,9 +96,12 @@ export default function Cart() {
                 </div>
                 <div className="flex items-center justify-between md:justify-start md:gap-6">
                   <button
-                    className="text-red-500 hover:text-red-700 text-sm font-medium underline"
+                    className="text-red-500 hover:text-red-700 text-sm font-medium underline flex items-center gap-1"
                     onClick={() => dispatch(removeItem(it.id))}
-                  >Remove</button>
+                    aria-label="Remove item"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
                   <div className="ml-auto md:ml-0 text-right min-w-[80px]">
                     <span className="block text-gray-500 text-xs">Subtotal</span>
                     <span className="text-gray-800 font-bold">₦{(it.price * it.quantity).toLocaleString()}</span>
