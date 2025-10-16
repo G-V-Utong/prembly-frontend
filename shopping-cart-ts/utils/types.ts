@@ -1,11 +1,11 @@
 export type Product = {
-  id: string
+  id: number
   name: string
   price: number
   image: string
   description: string
   slug: string
-  features: []
+  features: string[]
 }
 
 export type CartItem = Product & { quantity: number }
