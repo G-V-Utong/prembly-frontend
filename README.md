@@ -8,7 +8,7 @@ This repository contains three separate projects as requested:
 
 Each folder is a Vite project with its own dependencies. Follow the setup steps inside each subfolder's README.
 
-All applications are fully responsive
+All applications are fully responsive.
 
 ## Screenshots
 
