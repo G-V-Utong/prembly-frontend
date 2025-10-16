@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, Home, Menu, X } from "lucide-react";
 import { useSelector } from "react-redux";
-import type { CartItem, CartState } from "../../utils/types";
 import type { RootState } from "../redux/store";
 
 const Navbar = () => {

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Products from './pages/Products';
 import Cart from './pages/Cart.jsx';
 import ProductDetail from './pages/[slug]/ProductDetail.jsx';
