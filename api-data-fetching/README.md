@@ -26,8 +26,8 @@ npm run dev
 - Quotes page supports Prev/Next pagination and shows total pages
 - COVID page shows a line chart (cases & deaths), table and other data displayed in a grid
 - Users page displays a responsive card grid
-- a HttpClient function was created to simplify the fetch  calls and make the code more readable
-- a delay of 8ms has been added to the fetch calls. This is solely to display the loading spinner in action for the purpose of this test. In production, this code would be removed from each page:
+- A HttpClient function was created to simplify the fetch  calls and make the code more readable
+- A delay of 8ms has been added to the fetch calls. This is solely to display the loading spinner in action for the purpose of this test. In production, this code would be removed from each page:
 ```bash
 ... await new Promise((res) => setTimeout(res, 800));
 ```
