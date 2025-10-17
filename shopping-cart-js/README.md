@@ -10,6 +10,11 @@ npm run dev
 - React 18 + Vite
 - Redux Toolkit for global cart state
 - React Router v6
+- React Router v6
+- Tailwind v4
+- Lucide-react
+- Sonner for toast notifications
+
 
 ## Notes
 - Mock products loaded from `src/data/products.json`
